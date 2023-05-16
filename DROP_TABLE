@@ -1,0 +1,10 @@
+CREATE TABLE Student ( 
+    Studentid INTEGER CONSTRAINT stud_sid_pk PRIMARY KEY,
+    FName VARCHAR2(10), 
+    ContactNo NUMBER (10));
+    CREATE TABLE Marks (
+    CourseId INTEGER, 
+    StudentId INTEGER CONSTRAINT marks_sid_fk REFERENCES Student (StudentId), 
+    MarksScored DECIMAL (5,2));
+DROP TABLE Student CASCADE CONSTRAINTS;
+DROP TABLE Marks CASCADE CONSTRAINTS;
