@@ -1,0 +1,18 @@
+
+Let us understand some more concepts in Group By using Employee table.
+Employee Table
+ID	ENAME	DOJ	SALARY	BONUS	DEPT	DESIGNATION
+1	James Potter	01-Jun-14	75000	1000	ICP	PM
+2	Ethan McCarty	01-Feb-14	90000	1200	ETA	PM
+3	Emily Rayner	01-Jan-14	25000	100	ETA	SE
+4	Jack Abraham	01-Jul-14	30000	NULL	ETA	SSE
+5	Ayaz Mohammad	01-Apr-14	40000	NULL	ICP	TA
+
+Use Group By clause to get department wise employee count.
+
+SELECT Dept, Count(ID) FROM Employee GROUP BY Dept;
+
+Group By can also be used with multiple columns. In that case it treats each distinct combination of the columns as a single category. 
+Let us display maximum salary paid to each designation, within each department.
+
+SELECT Dept, Designation, MAX(Salary) FROM Employee GROUP BY Dept, Designation;
