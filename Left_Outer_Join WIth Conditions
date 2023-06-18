@@ -1,0 +1,23 @@
+Left Outer Join with condition
+Computer Table
+COMPID	MAKE	MODEL	MYEAR
+1001	Dell	Vostro	2013
+1002	Dell	Precision	2014
+1003	Lenovo	Edge	2013
+1004	Lenovo	Horizon	2014
+Employee Table
+ID	ENAME	DEPT	COMPID
+1	James Potter	ICP	1001
+2	Ethan McCarty	ETA	NULL
+3	Emily Rayner	ETA	1002
+4	Jack Abraham	ETA	NULL
+5	Ayaz Mohammad	ICP	1003
+
+Qerry:
+SELECT Id, EName, Dept, E.CompId AS E_CompId, C.CompId AS C_CompId, Model FROM Employee E LEFT OUTER JOIN Computer C ON E.CompId = C.CompId WHERE Dept = 'ETA'
+
+3 row(s) selected
+ID	ENAME	DEPT	E_COMPID	C_COMPID	MODEL
+2	Ethan McCarty	ETA	NULL	NULL	NULL
+3	Emily Rayner	ETA	1002	1002	Precision
+4	Jack Abraham	ETA	NULL	NULL	NULL
