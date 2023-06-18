@@ -1,0 +1,18 @@
+LEFT OUTER Join for tables A and B will always return all records from table A even if matching record is not found in table B as per the join condition. For records where match is found the result set is exactly same as the inner join result. However for non matching records all columns from table B appear as NULL in the result. Let us understand this join using Employee and Computer tables:
+Computer Table
+COMPID	MAKE	MODEL	MYEAR
+1001	Dell	Vostro	2013
+1002	Dell	Precision	2014
+1003	Lenovo	Edge	2013
+1004	Lenovo	Horizon	2014
+
+QUERRY:
+SELECT ID, ENAME, E.COMPID AS E_COMPID, C.COMPID AS C_COMPID, MODEL
+FROM Employee E LEFTOUTER JOIN Computer C ON E.COMPID = C.COMPID
+
+ID	ENAME	E_COMPID	C_COMPID	MODEL
+1	James Potter	1001	1001	Vostro
+2	Ethan McCarty	NULL	NULL	NULL
+3	Emily Rayner	1002	1002	Precision
+4	Jack Abraham	NULL	NULL	NULL
+5	Ayaz Mohammad	1003	1003	Edge
