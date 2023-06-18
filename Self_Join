@@ -1,0 +1,18 @@
+SELF Join represents join of a table with itself. In this example we use inner self join to retrive employee's manager name. The Cartesian product of Employee table with itself will contain 5 x 5 = 25 rows. However only three rows have manager matching id and these appears on the result.
+Employee Table
+ID	ENAME	DOJ	SALARY	BONUS	DEPT	DESIGNATION	MANAGER
+1	James Potter	01-Jun-14	75000	1000	ICP	PM	NULL
+2	Ethan McCarty	01-Feb-14	90000	1200	ETA	PM	NULL
+3	Emily Rayner	01-Jan-14	25000	100	ETA	SE	2
+4	Jack Abraham	01-Jul-14	30000	NULL	ETA	SSE	2
+5	Ayaz Mohammad	01-Apr-14	40000	NULL	ICP	TA	
+
+QERRY:-
+SELECT EMP.ID EMPID, EMP.ENAME EMPNAME, MGR.ID MGRID, MGR.ENAME MGRNAME 
+FROM Employee EMP INNER JOIN Employee MGR ON EMP.MANAGER = MGR.ID 
+
+3 row(s) selected
+EMPID	EMPNAME	MGRID	MGRNAME
+5	Ayaz Mohammad	1	James Potter
+3	Emily Rayner	2	Ethan McCarty
+4	Jack Abraham	2	Ethan McCarty
