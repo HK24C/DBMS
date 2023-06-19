@@ -1,0 +1,20 @@
+Employee Table
+ID	ENAME	DOJ	SALARY	BONUS	DEPT	DESIGNATION
+1	James Potter	01-Jun-14	75000	1000	ICP	PM
+2	Ethan McCarty	01-Feb-14	90000	1200	ETA	PM
+3	Emily Rayner	01-Jan-14	25000	100	ETA	SE
+4	Jack Abraham	01-Jul-14	30000	NULL	ETA	SSE
+5	Ayaz Mohammad	01-Apr-14	40000	NULL	ICP	TA
+
+Column position in the query can be used as an alternative to column name in ORDER BY clause
+
+QUERRY:
+Select ID, ENAME, DOJ, SALARY, DEPT, DESIGNATION FROM Employee ORDER BY 2
+5 row(s) selected
+ID	ENAME	DOJ	SALARY	DEPT	DESIGNATION
+5	Ayaz Mohammad	01-Apr-14	40000	ICP	TA
+3	Emily Rayner	01-Jan-14	25000	ETA	SE
+2	Ethan McCarty	01-Feb-14	90000	ETA	PM
+4	Jack Abraham	01-Jul-14	30000	ETA	SSE
+1	James Potter	01-Jun-14	75000	ICP	PM
+The result is sorted alphabetically by name which appears at second position in the result.
