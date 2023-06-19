@@ -1,0 +1,31 @@
+Employee Table
+ID	ENAME	DOJ	SALARY	BONUS	DEPT	DESIGNATION
+1	James Potter	01-Jun-14	75000	1000	ICP	PM
+2	Ethan McCarty	01-Feb-14	90000	1200	ETA	PM
+3	Emily Rayner	01-Jan-14	25000	100	ETA	SE
+4	Jack Abraham	01-Jul-14	30000	NULL	ETA	SSE
+5	Ayaz Mohammad	01-Apr-14	40000	NULL	ICP	TA
+
+QUERRY:
+Select ID, ENAME, DOJ, SALARY, DEPT, DESIGNATION FROM Employee ORDER BY DEPT ASC;
+
+5 row(s) selected
+ID	ENAME	DOJ	SALARY	DEPT	DESIGNATION
+3	Emily Rayner	01-Jan-14	25000	ETA	SE
+4	Jack Abraham	01-Jul-14	30000	ETA	SSE
+2	Ethan McCarty	01-Feb-14	90000	ETA	PM
+5	Ayaz Mohammad	01-Apr-14	40000	ICP	TA
+1	James Potter	01-Jun-14	75000	ICP	PM
+
+Each column in ORDER BY clause can have its own sort order, ascending or descending
+QUERRY:
+Select ID, ENAME, DOJ, SALARY, DEPT, DESIGNATION FROM Employee ORDER BY DEPT ASC, DESIGNATION DESC
+
+5 row(s) selected
+ID	ENAME	DOJ	SALARY	DEPT	DESIGNATION
+4	Jack Abraham	01-Jul-14	30000	ETA	SSE
+3	Emily Rayner	01-Jan-14	25000	ETA	SE
+2	Ethan McCarty	01-Feb-14	90000	ETA	PM
+5	Ayaz Mohammad	01-Apr-14	40000	ICP	TA
+1	James Potter	01-Jun-14	75000	ICP	PM
+Dept is sorted in ascending order, within the dept designation is sorted in descending order.
